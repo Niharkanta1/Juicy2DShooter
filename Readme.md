@@ -17,10 +17,4 @@ Contains the below modules.
 - Universal RP
 - Visual Studio Editor
 
-Steps to use:
-------------------------------
-- Extract the zip file to a Project folder
-- Open the project folder in the Unity Editor
-- Rename the Project Name and the Company Name in project settings
-
 
