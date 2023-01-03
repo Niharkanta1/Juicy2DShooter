@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Floor
+    uniqueID: 661586529
+    locked: 0
+  - name: BGElements
+    uniqueID: 94767131
+    locked: 0
+  - name: Agent
+    uniqueID: 2043602119
+    locked: 0
+  - name: Foreground
+    uniqueID: 3774055813
+    locked: 0
