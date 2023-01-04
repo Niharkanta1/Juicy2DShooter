@@ -6,7 +6,8 @@ Game features with
 - different vfx effects 
 - foot steps
 - bullet cell drops
-- lighting etc.
+- lighting 
+- shadows etc.
 and all juicy stuff.
 
 <br>

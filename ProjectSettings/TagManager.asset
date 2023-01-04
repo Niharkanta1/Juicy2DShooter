@@ -47,6 +47,9 @@ TagManager:
   - name: BGElements
     uniqueID: 94767131
     locked: 0
+  - name: Decorations
+    uniqueID: 2367096245
+    locked: 0
   - name: Agent
     uniqueID: 2043602119
     locked: 0
