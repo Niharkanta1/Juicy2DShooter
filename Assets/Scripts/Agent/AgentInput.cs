@@ -17,11 +17,19 @@ public class AgentInput : MonoBehaviour {
     [SerializeField]
     private InputActionReference movement, attack, pointerPosition;
 
+    private bool fireButtonDown = false;
+
     [field: SerializeField]
     public UnityEvent<Vector2> OnMovementKeyPressed { get; set; }
 
     [field: SerializeField]
     public UnityEvent<Vector2> OnPointerPositionChange { get; set; }
+
+    [field: SerializeField]
+    public UnityEvent OnFireButtonPressed { get; set; }
+
+    [field: SerializeField]
+    public UnityEvent OnFireButtonReleased { get; set; }
 
     private void Awake() {
         mainCamera = Camera.main;
@@ -30,6 +38,20 @@ public class AgentInput : MonoBehaviour {
     private void Update() {
         GetMovementInput();
         GetPointerInput();
+        GetFireInput();
+    }
+
+    private void GetFireInput() {
+        if(attack.action.ReadValue<float>() > 0) {
+            if (fireButtonDown == false)
+                fireButtonDown = true;
+
+            OnFireButtonPressed?.Invoke();
+        } else {
+            if (fireButtonDown)
+                fireButtonDown = false;
+            OnFireButtonReleased?.Invoke();
+        }
     }
 
     private void GetPointerInput() {
