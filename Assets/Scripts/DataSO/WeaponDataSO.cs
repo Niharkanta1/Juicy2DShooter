@@ -13,6 +13,9 @@ Date:       04-01-2023 16:56:52
 public class WeaponDataSO : ScriptableObject {
 
     [field: SerializeField]
+    public BulletDataSO BulletData { get; set; }
+
+    [field: SerializeField]
     [field: Range(0, 100)]
     public int AmmoCapacity { get; set; }
 

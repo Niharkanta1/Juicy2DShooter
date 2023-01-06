@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 /*=============================================
 Product:    Juicy2DShooter v1.0
@@ -66,7 +67,18 @@ public class Weapon : MonoBehaviour {
     }
 
     private void ShootBullet() {
-        Debug.Log("Shooting Bullet");
+        SpawnBullet(muzzle.transform.position, CalculateAngle(muzzle));
+    }
+
+    private void SpawnBullet(Vector3 position, Quaternion rotation) {
+        var bulletPrefab = Instantiate(weaponData.BulletData.BulletPrefab, position, rotation);
+        bulletPrefab.GetComponent<Bullet>().BulletData = weaponData.BulletData;
+    }
+
+    private Quaternion CalculateAngle(GameObject muzzle) {
+        float spread = Random.Range(-weaponData.SpreadAngle, weaponData.SpreadAngle);
+        Quaternion spreadRotation = Quaternion.Euler(new Vector3(0, 0, spread));
+        return muzzle.transform.rotation * spreadRotation;
     }
 
     private void FinishShoot() {

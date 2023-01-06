@@ -42,15 +42,16 @@ public class AgentInput : MonoBehaviour {
     }
 
     private void GetFireInput() {
-        if(attack.action.ReadValue<float>() > 0) {
-            if (fireButtonDown == false)
+        if (attack.action.ReadValue<float>() > 0) {
+            if (fireButtonDown == false) {
                 fireButtonDown = true;
-
-            OnFireButtonPressed?.Invoke();
+                OnFireButtonPressed?.Invoke();
+            }          
         } else {
-            if (fireButtonDown)
+            if (fireButtonDown) {
                 fireButtonDown = false;
-            OnFireButtonReleased?.Invoke();
+                OnFireButtonReleased?.Invoke();
+            }         
         }
     }
 
