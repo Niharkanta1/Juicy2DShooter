@@ -28,10 +28,19 @@ public class BulletRegular : Bullet {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Obstacle")) {
+        
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle")) {
             HitObstacle();
+        } else if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy")) {
+            var hittable = collision.GetComponent<IHittable>();
+            hittable?.GetHit(bulletData.Damage, gameObject);
+            HitEnemy();
         }
         Destroy(gameObject);
+    }
+
+    private void HitEnemy() {
+        
     }
 
     private void HitObstacle() {
