@@ -11,7 +11,8 @@ Developer:  nihar
 Company:    DeadW0Lf Games
 Date:       02-01-2023 09:54:45
 ================================================*/
-public class AgentInput : MonoBehaviour {
+public class AgentInput : MonoBehaviour, IAgentInput
+{
     private Camera mainCamera;
 
     [SerializeField]
@@ -46,12 +47,12 @@ public class AgentInput : MonoBehaviour {
             if (fireButtonDown == false) {
                 fireButtonDown = true;
                 OnFireButtonPressed?.Invoke();
-            }          
+            }
         } else {
             if (fireButtonDown) {
                 fireButtonDown = false;
                 OnFireButtonReleased?.Invoke();
-            }         
+            }
         }
     }
 
