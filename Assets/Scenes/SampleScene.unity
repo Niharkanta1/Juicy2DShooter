@@ -5172,8 +5172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pitchRandomness: 0.05
-  hitClip: {fileID: 0}
-  deathClip: {fileID: 0}
+  hitClip: {fileID: 8300000, guid: 6ccd702a304751a47aa5b24a43ce4c7b, type: 3}
+  deathClip: {fileID: 8300000, guid: ac23b8578ec94974b9eaa82394d30a27, type: 3}
   voiceLineClip: {fileID: 0}
 --- !u!82 &1039111030
 AudioSource:
@@ -5690,6 +5690,7 @@ GameObject:
   - component: {fileID: 1498589241}
   - component: {fileID: 1498589242}
   - component: {fileID: 1498589243}
+  - component: {fileID: 1498589236}
   m_Layer: 8
   m_Name: EnemyChort
   m_TagString: Untagged
@@ -5697,6 +5698,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1498589236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498589235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07bd03d3099ccd4d978c7343774b760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <AttackDelay>k__BackingField: 2
 --- !u!114 &1498589237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5795,6 +5809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <EnemyData>k__BackingField: {fileID: 11400000, guid: 500d9c57ebccaac4c917e669d8c5eaca, type: 2}
   <Health>k__BackingField: 2
+  <enemyAttack>k__BackingField: {fileID: 0}
   despwanTimer: 0.5
   <OnGetHit>k__BackingField:
     m_PersistentCalls:
@@ -5896,7 +5911,19 @@ MonoBehaviour:
         m_CallState: 2
   <OnFireButtonPressed>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1498589242}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: PerformAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <OnFireButtonReleased>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
@@ -6329,6 +6356,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda7b1406c4c4984cac241a57b4572ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Health>k__BackingField: 0
+  <OnGetHit>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1039111029}
+        m_TargetAssemblyTypeName: AgentSounds, Assembly-CSharp
+        m_MethodName: PlayHitSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  <OnDie>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1039111029}
+        m_TargetAssemblyTypeName: AgentSounds, Assembly-CSharp
+        m_MethodName: PlayDeathSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1638607823
 GameObject:
   m_ObjectHideFlags: 0

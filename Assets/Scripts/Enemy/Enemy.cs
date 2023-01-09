@@ -18,22 +18,37 @@ public class Enemy : MonoBehaviour, IHittable, IAgent
     [field: SerializeField]
     public int Health { get; private set; } = 2;
 
+    [field: SerializeField]
+    public EnemyAttack enemyAttack { get; set; }
+
     [SerializeField]
     private float despwanTimer = 0.5f;
+
+    private bool dead = false;
 
     [field: SerializeField]
     public UnityEvent OnGetHit { get; set; }
     [field: SerializeField]
     public UnityEvent OnDie { get; set; }
 
+    private void Awake() {
+        if(enemyAttack == null) {
+            enemyAttack = GetComponent<EnemyAttack>();
+        }
+    }
+
     private void Start() {
         Health = EnemyData.MaxHealth;
     }
 
     public void GetHit(int damage, GameObject damageDealer) {
-        Health--;
+        if (dead)
+            return;
+
+        Health -= damage;
         OnGetHit?.Invoke();
         if (Health <= 0) {
+            dead = true;
             OnDie?.Invoke();
         }
     }
@@ -41,5 +56,11 @@ public class Enemy : MonoBehaviour, IHittable, IAgent
     private IEnumerator WaitToDie() {
         yield return new WaitForSeconds(despwanTimer);
         Destroy(gameObject);
+    }
+
+    public void PerformAttack() {
+        if(!dead) {
+            enemyAttack.Attack(EnemyData.Damage);
+        }
     }
 }

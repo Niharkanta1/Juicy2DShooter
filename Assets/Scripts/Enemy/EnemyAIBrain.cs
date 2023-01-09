@@ -35,10 +35,12 @@ public class EnemyAIBrain : MonoBehaviour, IAgentInput {
     }
 
     private void Update() {
-        if(Target == null) {
+        if (Target == null) {
             OnMovementKeyPressed?.Invoke(Vector2.zero);
+        } else {
+            CurrentState.UpdateState();
         }
-        CurrentState.UpdateState();
+        
     }
 
     public void Attack() {
