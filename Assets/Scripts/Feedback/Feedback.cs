@@ -11,5 +11,9 @@ Date:       10-01-2023 19:49:14
 public abstract class Feedback : MonoBehaviour {
 
     public abstract void CreateFeedback();
-    public abstract void CompletePrevFeedback(); 
+    public abstract void CompletePrevFeedback();
+
+    protected virtual void OnDestroy() {
+        CompletePrevFeedback();
+    }
 }
