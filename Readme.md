@@ -7,6 +7,9 @@ Game features with
 - foot steps
 - bullet cell drops
 - lighting 
+- muzzle flashes
+- dotween 
+- blood splatters
 - shadows etc.
 and all juicy stuff.
 
