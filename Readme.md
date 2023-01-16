@@ -3,15 +3,21 @@
 A Simple unity project 2D Project with Cinemachine, New Input System and URP
 Game features with 
 - camera shake
-- different vfx effects 
+- different vfx effects - inprogress
 - foot steps
-- bullet cell drops
-- lighting 
+- bullet cell drops - planned
+- lighting
 - muzzle flashes
-- dotween 
-- blood splatters
+- dotween
+- blood splatters using particle system - planned
 - shadows etc.
 and all juicy stuff.
+
+Interesting Stuffs.
+
+- Shader Graph (Solid and disolve) - inprogress
+- Procedural Dungeon - planned
+- Save/Load System - planned
 
 <br>
 Udemy Course:

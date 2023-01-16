@@ -79,5 +79,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: ImpactEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4050611510854618205, guid: f58204ffd318398489bf2f4c5acb7977, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 565bfa6ffefbfa543a33d6ba78782234, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f58204ffd318398489bf2f4c5acb7977, type: 3}
