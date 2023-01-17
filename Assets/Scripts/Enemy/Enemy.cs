@@ -9,8 +9,7 @@ Developer:  nihar
 Company:    DeadW0Lf Games
 Date:       06-01-2023 15:42:59
 ================================================*/
-public class Enemy : MonoBehaviour, IHittable, IAgent
-{
+public class Enemy : MonoBehaviour, IHittable, IAgent {
 
     [field: SerializeField]
     public EnemyDataSO EnemyData { get; set; }
@@ -21,8 +20,8 @@ public class Enemy : MonoBehaviour, IHittable, IAgent
     [field: SerializeField]
     public EnemyAttack enemyAttack { get; set; }
 
-    [SerializeField]
-    private float despwanTimer = 0.5f;
+    //[SerializeField]
+    //private float despwanTimer = 0.5f;
 
     private bool dead = false;
 
@@ -53,8 +52,12 @@ public class Enemy : MonoBehaviour, IHittable, IAgent
         }
     }
 
-    private IEnumerator WaitToDie() {
-        yield return new WaitForSeconds(despwanTimer);
+    //private IEnumerator WaitToDie() {
+    //    yield return new WaitForSeconds(despwanTimer);
+    //    Destroy(gameObject);
+    //}
+
+    public void Die() {
         Destroy(gameObject);
     }
 

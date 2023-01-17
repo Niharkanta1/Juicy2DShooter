@@ -30,11 +30,10 @@ public class FlashSpriteFeedback : Feedback {
     }
 
     public override void CreateFeedback() {
-        if (spriteRenderer.material.HasProperty("_MakeSolidColor")) {
-            spriteRenderer.material.SetInt("_MakeSolidColor", 1);       
-        } else {
+        if (spriteRenderer.material.HasProperty("_MakeSolidColor") == false) {
             spriteRenderer.material.shader = flashMaterial.shader;
         }
+        spriteRenderer.material.SetInt("_MakeSolidColor", 1);
         spriteRenderer.sortingLayerName = "FX";
         StartCoroutine(WaitBeforeChangingBack());
     }
@@ -43,9 +42,8 @@ public class FlashSpriteFeedback : Feedback {
         yield return new WaitForSeconds(flashTime);
         if(spriteRenderer.material.HasProperty("_MakeSolidColor")) {
             spriteRenderer.material.SetInt("_MakeSolidColor", 0);
-        } else {
-            spriteRenderer.material.shader = originalMaterialShader;
         }
+        spriteRenderer.material.shader = originalMaterialShader;
         spriteRenderer.sortingLayerName = originalShortingLayer;
     }
 }

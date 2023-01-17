@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Material_SpriteFlashLitShader
-  m_Shader: {fileID: -6465566751694194690, guid: f2c64b7e8c9c01c4ba4f8e4f7371f7da, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 60fe70dec9f2a9a4f8a17d1d5b7906f6, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -37,7 +37,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Dissolve: 1
+    - _DissolveOutline: 0.05
     - _MakeSolidColor: 0
+    - _NoiseScale: 20
     m_Colors:
+    - _DissolveColor: {r: 1, g: 0.08282889, b: 0, a: 1}
     - _SolidColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

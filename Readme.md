@@ -10,6 +10,7 @@ Game features with
 - muzzle flashes
 - dotween
 - blood splatters using particle system - planned
+- postprocessing, bloom 
 - shadows etc.
 and all juicy stuff.
 

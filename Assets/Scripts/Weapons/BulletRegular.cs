@@ -12,7 +12,7 @@ Date:       05-01-2023 12:42:34
 ================================================*/
 public class BulletRegular : Bullet {
     protected Rigidbody2D rb2d;
-
+    private bool inactive = false;
     public override BulletDataSO BulletData { 
         get => base.BulletData;
         set { 
@@ -29,7 +29,8 @@ public class BulletRegular : Bullet {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        
+        if (inactive) return;
+        inactive = true;
         if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle")) {
             HitObstacle(collision);
         } else if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy")) {
