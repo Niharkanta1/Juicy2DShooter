@@ -52,4 +52,9 @@ public class AgentMovement : MonoBehaviour {
         }
         return Mathf.Clamp(currentVelocity, 0, MovementData.maxSpeed);
     }
+
+    public void StopImmediately() {
+        currentVelocity = 0;
+        rb2D.velocity = Vector2.zero;
+    }
 }

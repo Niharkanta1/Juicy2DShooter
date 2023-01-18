@@ -16,7 +16,7 @@ and all juicy stuff.
 
 Interesting Stuffs.
 
-- Shader Graph (Solid and disolve) - inprogress
+- Shader Graph
 - Procedural Dungeon - planned
 - Save/Load System - planned
 

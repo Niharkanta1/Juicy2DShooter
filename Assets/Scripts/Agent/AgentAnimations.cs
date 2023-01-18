@@ -23,4 +23,8 @@ public class AgentAnimations : MonoBehaviour {
     public void AnimatePlayer(float velocity) {
         SetMovingAnimation(velocity > 0);
     }
+
+    public void PlayDeathAnimation() {
+        agentAnimator.SetTrigger("death");
+    }
 }

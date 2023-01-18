@@ -923,6 +923,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4904393970094271786}
   - component: {fileID: 4904393970094271785}
+  - component: {fileID: 2100914050264279692}
   - component: {fileID: 4904393970094271784}
   m_Layer: 8
   m_Name: FeedbackHit
@@ -960,6 +961,21 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4904393970810758397}
   flashTime: 0.1
   flashMaterial: {fileID: 2100000, guid: 4054eee1c181b7c45be14b375ecedb00, type: 2}
+--- !u!114 &2100914050264279692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4904393970094271787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a059561df1a7404ea0769fcbd011d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freezeTimeDelay: 0.001
+  unfreezeTimeDelay: 0.002
+  freezeTimeValue: 0.1
 --- !u!114 &4904393970094271784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -974,6 +990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   feedBackToPlay:
   - {fileID: 4904393970094271785}
+  - {fileID: 2100914050264279692}
 --- !u!1 &4904393970285575566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,4 +1378,4 @@ MonoBehaviour:
   - {x: 0.30200434, y: -0.4766106, z: 0}
   m_ShapePathHash: 1318676097
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1312
+  m_InstanceId: 23556

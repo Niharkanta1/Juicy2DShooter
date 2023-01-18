@@ -31,12 +31,12 @@ public class Player : MonoBehaviour, IAgent, IHittable {
         if(Health <= 0) {
             dead = true;
             OnDie?.Invoke();
-            StartCoroutine(DeathCoroutine());
+            //StartCoroutine(DeathCoroutine());
         }
     }
 
-    IEnumerator DeathCoroutine() {
-        yield return new WaitForSeconds(0.5f);
-        Destroy(gameObject);
-    }
+    //IEnumerator DeathCoroutine() {
+    //    yield return new WaitForSeconds(0.5f);
+    //    Destroy(gameObject);
+    //}
 }
