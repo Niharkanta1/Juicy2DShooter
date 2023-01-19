@@ -9,7 +9,7 @@ Developer:  nihar
 Company:    DeadW0Lf Games
 Date:       06-01-2023 15:42:59
 ================================================*/
-public class Enemy : MonoBehaviour, IHittable, IAgent {
+public class Enemy : MonoBehaviour, IHittable, IAgent, IKnockback {
 
     [field: SerializeField]
     public EnemyDataSO EnemyData { get; set; }
@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour, IHittable, IAgent {
 
     [field: SerializeField]
     public EnemyAttack enemyAttack { get; set; }
+
+    private AgentMovement agentMovement;
 
     //[SerializeField]
     //private float despwanTimer = 0.5f;
@@ -34,6 +36,8 @@ public class Enemy : MonoBehaviour, IHittable, IAgent {
         if(enemyAttack == null) {
             enemyAttack = GetComponent<EnemyAttack>();
         }
+
+        agentMovement = GetComponent<AgentMovement>();
     }
 
     private void Start() {
@@ -65,5 +69,9 @@ public class Enemy : MonoBehaviour, IHittable, IAgent {
         if(!dead) {
             enemyAttack.Attack(EnemyData.Damage);
         }
+    }
+
+    public void KnockBack(Vector2 direction, float power, float duration) {
+        agentMovement.KnockBack(direction, power, duration);
     }
 }

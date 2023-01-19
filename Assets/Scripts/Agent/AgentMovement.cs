@@ -21,6 +21,9 @@ public class AgentMovement : MonoBehaviour {
     protected float currentVelocity = 3f;
     protected Vector2 movementDirection;
 
+    [SerializeField]
+    protected bool isKnockedBack = false;
+
     [field: SerializeField]
     public UnityEvent<float> OnVelocityChange { get; set; }
 
@@ -30,7 +33,32 @@ public class AgentMovement : MonoBehaviour {
 
     private void FixedUpdate() {
         OnVelocityChange?.Invoke(currentVelocity);
-        rb2D.velocity = currentVelocity * movementDirection.normalized;
+        if (!isKnockedBack)
+            rb2D.velocity = currentVelocity * movementDirection.normalized;
+    }
+
+    public void KnockBack(Vector2 direction, float power, float duration) {
+        if (isKnockedBack)
+            return;
+        isKnockedBack = true;
+        StartCoroutine(KnockBackCoroutine(direction, power, duration));
+    }
+
+    private void ResetKnockBack() {
+        StopAllCoroutines();
+        ResetKnockbackParameters();
+    }
+
+    IEnumerator KnockBackCoroutine(Vector2 direction, float power, float duration) {
+        rb2D.AddForce(direction.normalized * power, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(duration);
+        ResetKnockbackParameters();
+    }
+
+    private void ResetKnockbackParameters() {
+        currentVelocity = 0;
+        rb2D.velocity = Vector2.zero;
+        isKnockedBack = false;
     }
 
     public void MoveAgent(Vector2 movementInput) {
