@@ -16,9 +16,11 @@ public class ObjectPool : MonoBehaviour {
     protected int poolSize;
     protected int currentSize;
     protected Queue<GameObject> objectPool;
+    protected GameObject parentObject;
 
     private void Awake() {
         objectPool = new Queue<GameObject>();
+        parentObject = new GameObject(objectToSpawn.name + "_ObjectPool");
     }
 
     public virtual GameObject SpawnObject(GameObject currentObject = null) {
@@ -36,6 +38,7 @@ public class ObjectPool : MonoBehaviour {
             spawnObject.transform.position = transform.position;
             spawnObject.transform.rotation = Quaternion.identity;
         }
+        spawnObject.transform.SetParent(parentObject.transform);
         objectPool.Enqueue(spawnObject);
         return spawnObject;
     }

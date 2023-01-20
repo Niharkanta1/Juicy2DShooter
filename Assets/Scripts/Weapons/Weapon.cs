@@ -26,6 +26,7 @@ public class Weapon : MonoBehaviour {
         get { return ammo; }
         set {
             ammo = Mathf.Clamp(value, 0, weaponData.AmmoCapacity);
+            OnAmmoChange?.Invoke(ammo);
         }
     }
 
@@ -40,6 +41,9 @@ public class Weapon : MonoBehaviour {
     public UnityEvent OnShoot { get; set; }
     [field: SerializeField]
     public UnityEvent OnShootNoAmmo { get; set; }
+
+    [field: SerializeField]
+    public UnityEvent<int> OnAmmoChange { get; set; }
 
     private void Start() {
         Ammo = weaponData.AmmoCapacity;
@@ -71,6 +75,7 @@ public class Weapon : MonoBehaviour {
     }
 
     private void SpawnBullet(Vector3 position, Quaternion rotation) {
+        // Create new instance of bullet everytime. Need to use Object Pool for this 
         var bulletPrefab = Instantiate(weaponData.BulletData.BulletPrefab, position, rotation);
         bulletPrefab.GetComponent<Bullet>().BulletData = weaponData.BulletData;
     }
