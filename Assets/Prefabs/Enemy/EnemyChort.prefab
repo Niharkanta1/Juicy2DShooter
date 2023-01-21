@@ -216,6 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MovementData>k__BackingField: {fileID: 11400000, guid: 6bcc8f196d1fb4048aa1664395fd8627, type: 2}
   currentVelocity: 3
+  isKnockedBack: 0
   <OnVelocityChange>k__BackingField:
     m_PersistentCalls:
       m_Calls:
@@ -475,6 +476,7 @@ GameObject:
   - component: {fileID: 4904393968914869890}
   - component: {fileID: 4904393968914869889}
   - component: {fileID: 4904393968914869888}
+  - component: {fileID: 2438444221756467550}
   m_Layer: 8
   m_Name: TransitionChase
   m_TagString: Untagged
@@ -510,6 +512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Decisions>k__BackingField:
   - {fileID: 4904393968914869888}
+  - {fileID: 2438444221756467550}
   <PositiveResult>k__BackingField: {fileID: 4904393970426166563}
   <NegativeResult>k__BackingField: {fileID: 0}
 --- !u!114 &4904393968914869888
@@ -524,7 +527,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6383b95ac58b4f949a8b5413d3fa1957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Distance>k__BackingField: 5
+  <Distance>k__BackingField: 10
+--- !u!114 &2438444221756467550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4904393968914869891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a00d54eafa87d4281a047c1544c194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 10
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 640
+  <OnPlayerSpotted>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4904393968998124874
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6383b95ac58b4f949a8b5413d3fa1957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Distance>k__BackingField: 5
+  <Distance>k__BackingField: 10
 --- !u!1 &4904393969639125794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,4 +1400,4 @@ MonoBehaviour:
   - {x: 0.30200434, y: -0.4766106, z: 0}
   m_ShapePathHash: 1318676097
   m_Mesh: {fileID: 0}
-  m_InstanceId: 23556
+  m_InstanceId: -83170
