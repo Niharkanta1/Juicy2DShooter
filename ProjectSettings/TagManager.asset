@@ -17,7 +17,7 @@ TagManager:
   - Obstacle
   - EnemyMovement
   - PlayerMovement
-  - 
+  - Items
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: Decorations
     uniqueID: 2367096245
+    locked: 0
+  - name: Items
+    uniqueID: 2989204451
     locked: 0
   - name: Agent
     uniqueID: 2043602119

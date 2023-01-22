@@ -178,6 +178,7 @@ Transform:
   - {fileID: 4904393968866178172}
   - {fileID: 4904393970094271786}
   - {fileID: 5247469032084041102}
+  - {fileID: 6251834201412855142}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -320,6 +321,18 @@ MonoBehaviour:
       - m_Target: {fileID: 3256830854705222086}
         m_TargetAssemblyTypeName: FeedbackPlayer, Assembly-CSharp
         m_MethodName: PlayFeedback
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7400300932111453826}
+        m_TargetAssemblyTypeName: ItemDropper, Assembly-CSharp
+        m_MethodName: DropItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1199,7 +1212,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2043602119
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -2323278601745609058, guid: c8ffce00a2a70924294ff31a623aec22, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1400,4 +1413,53 @@ MonoBehaviour:
   - {x: 0.30200434, y: -0.4766106, z: 0}
   m_ShapePathHash: 1318676097
   m_Mesh: {fileID: 0}
-  m_InstanceId: -83170
+  m_InstanceId: -59880
+--- !u!1 &5443009098123268139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6251834201412855142}
+  - component: {fileID: 7400300932111453826}
+  m_Layer: 8
+  m_Name: ItemDropper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6251834201412855142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5443009098123268139}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4904393968871444567}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7400300932111453826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5443009098123268139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc9ed48868b58824b9ff52cb24569ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsToDrop:
+  - rate: 0.4
+    itemPrefab: {fileID: 1639261072939666656, guid: d4d7af9b677382e4db2f97a376a26e2d, type: 3}
+  - rate: 0.2
+    itemPrefab: {fileID: 2562110970591427652, guid: 59e5cedd180484b41a59b87f4a88309f, type: 3}
+  dropChance: 0.6
