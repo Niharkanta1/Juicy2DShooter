@@ -28,6 +28,7 @@ public class LineOfSightDecision : AIDecision {
         return false;
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos() {
         if(UnityEditor.Selection.activeObject == gameObject && enemyBrain != null && enemyBrain.Target != null) {
             Gizmos.color = Color.red;
@@ -35,4 +36,5 @@ public class LineOfSightDecision : AIDecision {
             Gizmos.DrawRay(transform.position, direction.normalized * distance);
         }
     }
+#endif
 }

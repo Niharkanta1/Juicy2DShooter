@@ -27,4 +27,8 @@ public class AgentAnimations : MonoBehaviour {
     public void PlayDeathAnimation() {
         agentAnimator.SetTrigger("death");
     }
+
+    public void SetWalkSpeed(int val) {
+        agentAnimator.SetFloat("walkMultiplier", val);
+    }
 }

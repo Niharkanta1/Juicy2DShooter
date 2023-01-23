@@ -24,3 +24,10 @@ Interesting Stuffs.
 Udemy Course:
 https://www.udemy.com/course/unity-2020-urp-how-to-make-a-2d-roguelike-shooter/
 
+
+Create New Player:
+1. Create a prefab variant from the Player
+2. Update below references:
+	a. OnDie Event in Player (Script) add RestartButton Gameobject setActive
+	b. UI Health (Player (Script))- add reference for UIController
+	c. UI Ammo (Player Weapon (Script)) - add reference for UI Controller
