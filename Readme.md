@@ -31,3 +31,11 @@ Create New Player:
 	a. OnDie Event in Player (Script) add RestartButton Gameobject setActive
 	b. UI Health (Player (Script))- add reference for UIController
 	c. UI Ammo (Player Weapon (Script)) - add reference for UI Controller
+
+WIP:
+Score 
+MAP
+Level Transition
+Enemy Types
+Weapon Types
+Boss
